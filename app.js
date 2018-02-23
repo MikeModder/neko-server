@@ -33,10 +33,10 @@ app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
 
 app.use((req, res, next) => {
-    let hascfg = req.app.locals.configs.has(req.ip);
-    if(!hascfg) req.app.locals.newCfg(req.ip);
-    console.log(req.ip)
-    req.cfg = req.app.locals.configs.get(req.ip);
+    req.rip = req.get('x-forwarded-for');
+    let hascfg = req.app.locals.configs.has(req.rip);
+    if(!hascfg) req.app.locals.newCfg(req.rip);
+    res.locals.cfg = req.app.locals.configs.get(req.rip);
     next();
 });
 
@@ -44,7 +44,7 @@ let neko = require('./neko.js');
 app.use('/app/nekoatsume', neko);
 
 app.get('/', (req, res) => {
-    res.render('config', { config: req.cfg });
+    res.render('config', { config: res.locals.cfg });
 });
 
 app.post('/update', (req, res) => {
@@ -54,7 +54,7 @@ app.post('/update', (req, res) => {
     let date = req.body.date;
     let pass = req.body.pass;
     if(!gold || !silver || !date || !pass) return res.send(`Missing one or more fields! Try again!`);
-    app.locals.configs.set(req.ip, { fish: { gold: gold, silver: silver }, pass: pass, date: date });
+    app.locals.configs.set(req.rip, { fish: { gold: gold, silver: silver }, pass: pass, date: date });
     res.send(`All done, now open the app!`);
 });
 
