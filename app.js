@@ -28,12 +28,14 @@ proxy.http('hpmobile.jp', config.host);
 
 app.use(morgan('dev'));
 app.use(bodyParse.urlencoded({ extended: true }));
+
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
 
 app.use((req, res, next) => {
     let hascfg = req.app.locals.configs.has(req.ip);
     if(!hascfg) req.app.locals.newCfg(req.ip);
+    console.log(req.ip)
     req.cfg = req.app.locals.configs.get(req.ip);
     next();
 });
