@@ -3,5 +3,22 @@
         "web": 80,
         "proxy": 8092
     },
-    "host": "some-app.herokuapp.com"
+    "host": "some-app.herokuapp.com",
+    "links": [
+        {
+            "name": "GitHub",
+            "icon_name": "github",
+            "url": "https://github.com/MikeModder/neko-server"
+        },
+        {
+            "name": "GitHub",
+            "icon_name": "github",
+            "url": "https://github.com/MikeModder/neko-server"
+        },
+        {
+            "name": "GitHub",
+            "icon_name": "github",
+            "url": "https://github.com/MikeModder/neko-server"
+        }
+    ]
 }

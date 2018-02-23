@@ -43,6 +43,13 @@ app.use((req, res, next) => {
 let neko = require('./neko.js');
 app.use('/app/nekoatsume', neko);
 
+app.use(express.static('static'));
+
+app.post('/app/appadv/get_appadv_url.php', (req, res) => {
+    //${config.links[0].name},${config.links[0].icon_name},${config.links[0].url},
+    res.send(`3,${config.links[0].name},${config.links[0].icon_name},${config.links[0].url},${config.links[1].name},${config.links[1].icon_name},${config.links[1].url},${config.links[2].name},${config.links[2].icon_name},${config.links[2].url},`);
+});
+
 app.get('/', (req, res) => {
     res.render('config', { config: res.locals.cfg });
 });
