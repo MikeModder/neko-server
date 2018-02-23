@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Neko-Server | Config</title>
+</head>
+<body>
+    <form action="/update" method="post">
+        Amount of gold fish: <input type="number" name="gold" id="gold" value="<%= config.fish.gold %>"><br>
+        Amount of silver fish: <input type="number" name="silver" id="silver" value="<%= config.fish.silver %>"><br>
+        Date: <input type="text" name="date" id="date" value="<%= config.date %>"><br>
+        Password: <input type="text" name="pass" id="pass" value="<%= config.pass %>"><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>

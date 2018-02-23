@@ -6,8 +6,11 @@
   "author": "MikeModder",
   "license": "GPLv3",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
     "enmap": "^0.4.2",
     "express": "^4.16.2",
+    "moment": "^2.20.1",
     "morgan": "^1.9.0",
     "redbird": "^0.7.0",
     "redwire": "^2.2.0"
