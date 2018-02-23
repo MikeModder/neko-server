@@ -1,0 +1,15 @@
+{
+  "name": "neko-server",
+  "version": "1.0.0",
+  "description": "A server that allows users to easily fake responses from the Neko Atsume password server",
+  "main": "app.js",
+  "author": "MikeModder",
+  "license": "GPLv3",
+  "dependencies": {
+    "enmap": "^0.4.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "redbird": "^0.7.0",
+    "redwire": "^2.2.0"
+  }
+}
