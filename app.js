@@ -56,8 +56,10 @@ app.post('/update', (req, res) => {
     res.send(`All done, now open the app!`);
 });
 
-app.listen(config.ports.web, () => {
-    console.log(`[INFO] Server ready and listening on port ${config.ports.web}!`);
+let port = process.env.PORT || config.ports.web;
+
+app.listen(port, () => {
+    console.log(`[INFO] Server ready and listening on port ${port}!`);
 });
 
 
