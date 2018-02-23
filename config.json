@@ -1,7 +1,7 @@
 {
     "ports": {
-        "web": 80,
+        "web": 8080,
         "proxy": 8092
     },
-    "host": "neko-server.herokuapp.com"
+    "host": "neko-server.herokuapp.com:8080"
 }
