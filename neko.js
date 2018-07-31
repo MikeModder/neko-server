@@ -12,7 +12,6 @@ router.post('/neko_daily_en.php', (req, res) => {
 
 router.post('/neko_aikotoba_en.php', (req, res) => {
     //2,YYYY-MM-DD,Silver,Gold,
-    console.log(req.query);
     let passAtt = req.query.aiko;
     let gold = res.locals.cfg.fish.gold;
     let silver = res.locals.cfg.fish.silver;
