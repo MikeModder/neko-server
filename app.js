@@ -55,7 +55,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/update', (req, res) => {
-    console.log(req.body);
     let gold = req.body.gold;
     let silver = req.body.silver;
     let date = req.body.date;
@@ -68,7 +67,7 @@ app.post('/update', (req, res) => {
 let port = process.env.PORT || config.ports.web;
 
 app.listen(port, () => {
-    console.log(`[INFO] Server ready and listening on port ${port}!`);
+    console.log(`[INFO] Server ready and listening on port ${port}! Proxy listening on port ${config.ports.proxy}`);
 });
 
 
